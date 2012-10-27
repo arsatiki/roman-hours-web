@@ -15,7 +15,7 @@ function timestamp(j) {
 
 function compute_period(latitude, longitude) {
 	var now = Date.now();
-	var today = julian(now) - __EXACT_EPOCH + longitude / 360;
+	var today = Math.round(julian(now) - __EXACT_EPOCH + longitude / 360);
 	var cycle;
 	var start, end;
 	
