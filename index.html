@@ -47,7 +47,6 @@ function setHand(hour) {
 
 function tick() {
 	var period = compute_period(latitude, longitude);
-	console.log(period);
 	var hour = 12 * (Date.now() - period.start) / period.duration;
 	console.log("Setting hour to " + hour);
 	setHand(hour);

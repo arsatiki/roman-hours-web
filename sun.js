@@ -48,7 +48,6 @@ function crossings(t, lat, lon) {
 	var num = dsin(-0.83) - dsin(lat) * Math.sin(d);
 	var den = dcos(lat) * Math.cos(d);
 	var w = Math.acos(num/den);
-	console.log("Solar noon:" + transit + ". Length:" + w);
 	
 	return {rise: timestamp(transit - w / __TAU), 
 		set: timestamp(transit + w / __TAU)};
