@@ -22,16 +22,18 @@
 	top: 118px;
 }
 </style>
+<script src="sun.js" type="application/javascript"></script>
 <script type="application/javascript">
-var TAU = 2 * Math.PI;
-var hour = 0;
+/* TODO: 
+- location to localstorage
+- update location with geolocation api
+- sync time over the internet?
 
-function tick() {
-	hour += 0.1;
-	hour %= 12;
-	setHand(hour);
-}
-setInterval(tick, 1000);
+*/
+
+var TAU = 2 * Math.PI;
+
+var latitude = 60.1708, longitude = 24.9375;
 
 function angle(hour) {
 	return TAU * hour / 12;
@@ -42,6 +44,19 @@ function setHand(hour) {
 	var h = document.getElementById('hand');
 	h.style.WebkitTransform = "scale(0.225, 0.225) rotate(" + a + "rad)";
 }
+
+function tick() {
+	var now = Date.now() / 1000;
+	prev_event = 1351353012;
+	next_event = 1351373012;
+	var hour = 12 * (next_event - now) / (next_event - prev_event);
+	console.log("Setting hour to " + hour);
+	setHand(hour);
+}
+
+setTimeout(tick, 100);
+setInterval(tick, 60000);
+
 
 </script>
 </head>
