@@ -52,7 +52,7 @@ function tick() {
 	setHand(hour);
 }
 
-setTimeout(tick, 100);
+document.addEventListener('DOMContentLoaded', tick, false);
 setInterval(tick, 60000);
 
 
