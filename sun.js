@@ -1,4 +1,4 @@
-__EXACT_EPOCH = 2451545.009;
+__EXACT_EPOCH = 2451545.0009;
 var __TAU = 2 * Math.PI;
 
 function dsin(d) { return Math.sin(__TAU * d / 360);}
