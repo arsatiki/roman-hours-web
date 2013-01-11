@@ -53,6 +53,8 @@ function tick() {
 	var hour = 12 * (Date.now() - period.start) / period.duration;
 	console.log("Setting hour to " + hour);
 	setHand(hour);
+	document.getElementById('lat').innerText=latitude;
+	document.getElementById('lon').innerText=longitude;
 }
 
 document.addEventListener('DOMContentLoaded', tick, false);
@@ -68,7 +70,8 @@ window.addEventListener('load', function(){
 </script>
 </head>
 <body>
-
+<span id="lat"></span>
+<span id="lon"></span>
 <div id="clock">
 <img id="hand" src="clockhand.png">
 </div>
