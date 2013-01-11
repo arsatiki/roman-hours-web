@@ -33,7 +33,15 @@
 
 var TAU = 2 * Math.PI;
 
-var latitude = 60.1708, longitude = 24.9375;
+var latitude = 41.9, longitude = 12.5;
+
+if ("geolocation" in navigator) {
+	navigator.geolocation.watchPosition(function(pos){
+		latitude = pos.coords.latitude;
+		longitude = pos.coords.longitude;
+		tick();
+	});
+}
 
 function angle(hour) {
 	return TAU * hour / 12;
