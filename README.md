@@ -1,6 +1,8 @@
 Roman Hour Clock
 ----------------
 
+Visit http://arsatiki.github.com/roman-hours-web/
+
 This page presents a clock which shows the hours according to the ancient Roman system.
 There are 12 hours in a day between sunrise and sunset.
 Likewise there are 12 hours in a night between sunset and sunrise.
