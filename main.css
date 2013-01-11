@@ -1,0 +1,32 @@
+#clock { 
+	border-style: solid;
+
+	border-radius: 50%;
+
+	margin: 10px auto;
+	width: 300px;
+	height: 300px;
+	
+	position: relative;
+}
+
+#clock.day {
+	border-color: orange black black;
+	border-width: 3px 1px 1px ;
+}
+
+
+#clock.night {
+	border-color: black black orange;
+	border-width: 1px 1px 3px ;
+}
+
+#clock img {
+	-webkit-transition: -webkit-transform 1s linear 0s;
+	-webkit-transform-origin: 32px 32px;
+	-webkit-transform: scale(0.01, 0.01);
+	position: relative;
+	left: 118px;
+	top: 118px;
+}
+

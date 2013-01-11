@@ -17,7 +17,7 @@ function compute_period(latitude, longitude) {
 	var now = Date.now();
 	var today = Math.round(julian(now) - __EXACT_EPOCH + longitude / 360);
 	var cycle;
-	var start, end;
+	var start, end, mode;
 	
 	cycle = crossings(today, latitude, longitude);
 
@@ -25,15 +25,18 @@ function compute_period(latitude, longitude) {
 		end = cycle.rise;
 		cycle = crossings(today - 1,  latitude, longitude);
 		start = cycle.set;
+		mode = "night";
 	} else if (now < cycle.set) {
 		start = cycle.rise;
 		end = cycle.set;
+		mode = "day";
 	} else {
 		start = cycle.set;
 		cycle = crossings(today + 1, latitude, longitude);
 		end = cycle.rise;
+		mode = "night";
 	}
-	return {start: start, duration: end - start}
+	return {start: start, duration: end - start, mode: mode};
 }
 
 function crossings(t, lat, lon) {
