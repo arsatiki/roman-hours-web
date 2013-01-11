@@ -1,2 +1,4 @@
 - inverse colors for night (white on black)
-- some sort of indicator for seconds (but it should not be a dial)
+- some sort of indicator for seconds 
+  - it should not be a dial
+  - rather, it should indicate the relative speed of time passing. a blinkenlicht?
