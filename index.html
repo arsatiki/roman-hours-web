@@ -35,6 +35,9 @@ if ("geolocation" in navigator) {
 		latitude = pos.coords.latitude;
 		longitude = pos.coords.longitude;
 		tick();
+	},
+	function(err){
+		document.getElementById('err').innerText=err.code+": "+err.message;
 	});
 }
 
@@ -72,6 +75,7 @@ window.addEventListener('load', function(){
 <body>
 <span id="lat"></span>
 <span id="lon"></span>
+<span id="err"></span>
 <div id="clock">
 <img id="hand" src="clockhand.png">
 </div>
