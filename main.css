@@ -10,6 +10,13 @@
 	position: relative;
 }
 
+#secs {
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	
+}
+
 #clock.day {
 	border-color: orange black black;
 	border-width: 3px 1px 1px ;
