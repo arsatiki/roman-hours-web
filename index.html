@@ -71,7 +71,7 @@ function tick() {
 	var hour = 12 * (Date.now() - period.start) / period.duration;
 	setHand(hour);
 	setMode(period.mode);
-	setBlinkTime(period.duration / 43200);
+	setBlinkTime(period.duration / (1000 * 12 * 3600));
 
 	console.log("Latitude", latitude, ". Longitude", longitude);
 	console.log("Setting hour to " + hour + " of " + period.mode);
