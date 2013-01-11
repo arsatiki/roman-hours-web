@@ -31,13 +31,15 @@ var TAU = 2 * Math.PI;
 var latitude = 41.9, longitude = 12.5;
 
 if ("geolocation" in navigator) {
+	console.log("Setting location watch.");
 	navigator.geolocation.watchPosition(function(pos){
 		latitude = pos.coords.latitude;
 		longitude = pos.coords.longitude;
 		tick();
+		console.log("Updating location");
 	},
 	function(err){
-		document.getElementById('err').innerText=err.code+": "+err.message;
+		console.log(err.code, err.message);
 	});
 }
 
@@ -56,8 +58,7 @@ function tick() {
 	var hour = 12 * (Date.now() - period.start) / period.duration;
 	console.log("Setting hour to " + hour);
 	setHand(hour);
-	document.getElementById('lat').innerText=latitude;
-	document.getElementById('lon').innerText=longitude;
+	console.log("Latitude", latitude, ". Longitude", longitude);
 }
 
 document.addEventListener('DOMContentLoaded', tick, false);
@@ -73,9 +74,6 @@ window.addEventListener('load', function(){
 </script>
 </head>
 <body>
-<span id="lat"></span>
-<span id="lon"></span>
-<span id="err"></span>
 <div id="clock">
 <img id="hand" src="clockhand.png">
 </div>
