@@ -10,6 +10,15 @@
 	position: relative;
 }
 
+#clock img {
+	-webkit-transition: -webkit-transform 1s linear 0s;
+	-webkit-transform-origin: 32px 32px;
+	-webkit-transform: scale(0.01, 0.01);
+	position: relative;
+	left: 118px;
+	top: 118px;
+}
+
 #secs {
 	width: 10px;
 	height: 10px;
@@ -27,13 +36,3 @@
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
-
-#clock img {
-	-webkit-transition: -webkit-transform 1s linear 0s;
-	-webkit-transform-origin: 32px 32px;
-	-webkit-transform: scale(0.01, 0.01);
-	position: relative;
-	left: 118px;
-	top: 118px;
-}
-
