@@ -1,5 +1,5 @@
 #clock { 
-	border-style: 1px solid black;
+	border: 1px solid black;
 
 	border-radius: 50%;
 
@@ -17,6 +17,24 @@
 	position: relative;
 	left: 118px;
 	top: 118px;
+}
+
+#sun, #moon {
+	position: absolute;
+	font-size: 200%;
+	display: none;
+}
+
+.day #sun {
+	top: 10px;
+	left: 10px;
+	display: block;
+}
+
+.night #moon {
+	top: 10px;
+	left: 10px;
+	display: block;
 }
 
 #secs {
