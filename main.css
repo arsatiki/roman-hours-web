@@ -19,23 +19,6 @@
 	top: 118px;
 }
 
-#sun {
-	position: absolute;
-	font-size: 200%;
-	display: none;
-}
-
-.day #sun {
-	top: 10px;
-	left: 10px;
-	display: block;
-}
-
-.night #moon {
-	top: 10px;
-	left: 10px;
-	display: block;
-}
 
 #secs {
 	width: 10px;
