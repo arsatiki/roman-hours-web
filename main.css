@@ -19,7 +19,7 @@
 	top: 118px;
 }
 
-#sun, #moon {
+#sun {
 	position: absolute;
 	font-size: 200%;
 	display: none;
