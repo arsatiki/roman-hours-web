@@ -20,10 +20,6 @@ function setHand(hour) {
 	h.style.WebkitTransform = "scale(0.225, 0.225) rotate(" + a + "rad)";
 }
 
-function setMode(mode) {
-	document.getElementById("clock").className = mode;
-}
-
 function setBlinkTime(t) {
 	document.getElementById("secs").style["-webkit-animation-duration"] = t + "s";
 }
@@ -32,7 +28,6 @@ function tick() {
 	var period = compute_period(latitude, longitude);
 	var hour = 12 * (Date.now() - period.start) / period.duration;
 	setHand(hour);
-	setMode(period.mode);
 	setBlinkTime(period.duration / (1000 * 12 * 3600));
 
 	console.log("Latitude", latitude, ". Longitude", longitude);
