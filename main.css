@@ -20,6 +20,9 @@
 }
 
 
+#clock.day { border: 1px solid black; }
+#clock.night {border: 3px double gray; }
+
 #secs {
 	width: 10px;
 	height: 10px;

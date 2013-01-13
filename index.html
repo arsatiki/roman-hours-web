@@ -24,11 +24,16 @@ function setBlinkTime(t) {
 	document.getElementById("secs").style["-webkit-animation-duration"] = t + "s";
 }
 
+function setMode(m) {
+	document.getElementById("clock").className = m;
+}
+
 function tick() {
 	var period = compute_period(latitude, longitude);
 	var hour = 12 * (Date.now() - period.start) / period.duration;
 	setHand(hour);
 	setBlinkTime(period.duration / (1000 * 12 * 3600));
+	setMode(period.mode);
 
 	console.log("Latitude", latitude, ". Longitude", longitude);
 	console.log("Setting hour to " + hour + " of " + period.mode);
