@@ -2,5 +2,5 @@
 - [ ] some sort of indicator for seconds 
   - it should not be a dial
   - rather, it should indicate the relative speed of time passing. a blinkenlicht?
-- [x] use geolocation API to determine user location
-- [x] store last known user location to localstorage
+- [ ] use geolocation API to determine user location
+- [ ] store last known user location to localstorage

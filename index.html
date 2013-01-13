@@ -10,44 +10,6 @@ var TAU = 2 * Math.PI;
 
 var latitude = 41.9, longitude = 12.5;
 
-function getDefault(key, defaultv) {
-	var v;
-	v = localStorage.getItem(key);
-	return (v !== null)? v * 1.0: defaultv;
-}
-
-function updatePosition(pos) {
-	latitude = pos.coords.latitude;
-	longitude = pos.coords.longitude;
-	if (console)
-		console.log("Updating lat: " + latitude + ", lon: " + longitude);
-	localStorage.setItem("longitude", longitude);
-	localStorage.setItem("latitude", latitude);
-	tick();
-}
-
-function locate() {
-	console.log("Locating");
-	if ("localStorage" in window) {
-		console.log("Checking local storage for previous location");
-		latitude = getDefault("latitude", latitude);
-		longitude = getDefault("longitude", longitude);
-	}
-
-	if (! "geolocation" in navigator) {
-		console.log("No geolocation available, using defaults.");
-	}
-	navigator.geolocation.getCurrentPosition(updatePosition, errCallback,
-		{maximumAge:60000, timeout:10000});
-	navigator.geolocation.watchPosition(updatePosition, errCallback,
-		{maximumAge:600000, timeout:100000});
-	tick();
-}
-
-function errCallback(err) {
-	console.log(err.code, err.message);
-}
-
 function angle(hour) {
 	return TAU * hour / 12;
 }
@@ -78,6 +40,7 @@ function tick() {
 }
 
 setInterval(tick, 60000);
+document.addEventListener('DOMContentLoaded', tick, false);
 
 // Hide Safari top menu
 window.addEventListener('load', function(){
@@ -86,7 +49,6 @@ window.addEventListener('load', function(){
 	}, 0);
 });
 
-document.addEventListener('DOMContentLoaded', locate, false);
 
 </script>
 </head>
